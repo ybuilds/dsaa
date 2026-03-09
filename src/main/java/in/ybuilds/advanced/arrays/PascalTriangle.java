@@ -5,6 +5,27 @@ import java.util.List;
 import java.util.Scanner;
 
 public class PascalTriangle {
+    public int factorial(int n) {
+        if (n < 1)
+            return 1;
+        return n * factorial(n-1);
+    }
+
+    public int ncr(int n, int r) {
+        return factorial(n) / (factorial(r) * factorial(n-r));
+    }
+
+    public void pascal(int n, int i) {
+        if (i == n)
+            return;
+
+        for(int j=0; j<=i; j++)
+            System.out.print(ncr(i, j) + " ");
+        System.out.println();
+
+        pascal(n, i+1);
+    }
+
     List<List<Integer>> pascal = new ArrayList<>();
 
     public List<List<Integer>> generate(int r) {
@@ -53,5 +74,8 @@ public class PascalTriangle {
         int[] pascal2 = object.pascalTriangleII(r);
         for(int i: pascal2)
             System.out.print(i + " ");
+
+        int n = scanner.nextInt();
+        object.pascal(n, 0);
     }
 }

@@ -34,7 +34,5 @@ public class FourSum {
             nums[i] = scanner.nextInt();
         int target = scanner.nextInt();
         System.out.println(object.fourSum(nums, target));
-        //1, -2, 3, 5, 7, 9     7
-        //7, -7, 1, 2, 14, 3    9
     }
 }
